@@ -1,4 +1,4 @@
-# Leitura de Faturas de Energia
+# Leitura de Faturas de Energia (PT-BR)
 Este projeto tem como objetivo compilar o histórico das unidades consumidoras, utilizando as informações contidas nas faturas de energia emitidas pela concessionária local, Energisa, na Paraíba, Brasil. Cada fatura contém uma tabela na segunda página, apresentando dados dos últimos 12 meses de consumo ativo, demanda ativa, consumo reativo e demanda reativa, tanto em períodos "ponta" quanto "fora de ponta". O script em Python foi desenvolvido para analisar arquivos no formato PDF, utilizando a tecnologia OCR Tesseract para extrair dados relevantes. Após a extração, as informações são processadas e exibidas por meio da biblioteca Pandas.
 
 ## Como Utilizar
@@ -24,7 +24,7 @@ Em caso de dúvidas ou sugestões, sinta-se à vontade para contatar: [lucasddol
 
 O dataframe resultante pode ser aproveitado de diversas maneiras, dependendo do seu objetivo. Pode ser utilizado para análise de dados, criação de dashboards ou qualquer outra aplicação desejada. Personalize e explore os resultados conforme suas necessidades.
 
-# Energy Bill Reading
+# Energy Bill Reading (EN)
 This project aims to compile the history of consumer units using the information contained in the energy bills issued by the local utility company, Energisa, in Paraíba, Brazil. Each bill contains a table on the second page, presenting data for the last 12 months of active consumption, active demand, reactive consumption, and reactive demand, both in "peak" and "off-peak" periods. The Python script was developed to analyze PDF files, using OCR Tesseract technology to extract relevant data. After extraction, the information is processed and displayed using the Pandas library.
 
 ## How to Use
