@@ -24,6 +24,10 @@ Em caso de dúvidas ou sugestões, sinta-se à vontade para contatar: [lucasddol
 
 O dataframe resultante pode ser aproveitado de diversas maneiras, dependendo do seu objetivo. Pode ser utilizado para análise de dados, criação de dashboards ou qualquer outra aplicação desejada. Personalize e explore os resultados conforme suas necessidades.
 
+![image](https://github.com/lucasddoliveira/Reading_of_Energy_Bills/assets/85253035/2c161857-1764-4846-a72a-1c61561211f9)
+![image](https://github.com/lucasddoliveira/Reading_of_Energy_Bills/assets/85253035/65ef15ba-c873-4f15-b72c-ec4d96cea08b)
+![image](https://github.com/lucasddoliveira/Reading_of_Energy_Bills/assets/85253035/258a3c49-759d-4ab4-85d4-7098367485ec)
+
 # Energy Bill Reading (EN)
 This project aims to compile the history of consumer units using the information contained in the energy bills issued by the local utility company, Energisa, in Paraíba, Brazil. Each bill contains a table on the second page, presenting data for the last 12 months of active consumption, active demand, reactive consumption, and reactive demand, both in "peak" and "off-peak" periods. The Python script was developed to analyze PDF files, using OCR Tesseract technology to extract relevant data. After extraction, the information is processed and displayed using the Pandas library.
 
@@ -50,3 +54,7 @@ For questions or suggestions, feel free to contact: [lucasddoliveira1@gmail.com]
 ## Results and Usage
 
 The resulting dataframe can be utilized in various ways, depending on your objective. It can be used for data analysis, dashboard creation, or any other desired application. Customize and explore the results according to your needs.
+
+![image](https://github.com/lucasddoliveira/Reading_of_Energy_Bills/assets/85253035/2c161857-1764-4846-a72a-1c61561211f9)
+![image](https://github.com/lucasddoliveira/Reading_of_Energy_Bills/assets/85253035/65ef15ba-c873-4f15-b72c-ec4d96cea08b)
+![image](https://github.com/lucasddoliveira/Reading_of_Energy_Bills/assets/85253035/258a3c49-759d-4ab4-85d4-7098367485ec)
