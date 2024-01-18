@@ -1,2 +1,11 @@
-# Reading_of_Energy_Bills
-This repository aims to ...
+# Leitura de Faturas de Energia
+
+Este projeto visa compilar o histórico das unidades consumidoras, utilizando as informações contidas nas faturas de energia emitidas pela concessionária local, Energisa, na Paraíba, Brasil. Cada fatura contém uma tabela na segunda página, apresentando dados dos últimos 12 meses de consumo ativo, demanda ativa, consumo reativo e demanda reativa, tanto em períodos "ponta" quanto "fora de ponta". O script em Python foi desenvolvido para analisar arquivos no formato PDF, utilizando a tecnologia OCR Tesseract para extrair dados relevantes. Após a extração, as informações são processadas e exibidas por meio da biblioteca Pandas.
+
+Para utilizar este script, é necessário instalar todas as dependências e inserir os arquivos a serem processados na pasta denominada "Faturas". O programa opera de maneira cumulativa, sugerindo que, para construir um histórico mais abrangente, considere inserir duas ou mais faturas em meses distintos da mesma unidade consumidora. Por fim, é importante instalar o Tesseract via https://sourceforge.net/projects/tesseract-ocr.mirror/ e declarar o seu path localmente no arquivo .py.
+
+# Energy Invoice Reading
+
+This project aims to compile the history of consumer units using information found in energy invoices issued by the local utility company, Energisa, in Paraíba, Brazil. Each invoice contains a table on the second page, presenting data for the last 12 months of active consumption, active demand, reactive consumption, and reactive demand, both in "peak" and "off-peak" periods. The Python script was developed to analyze PDF files, utilizing OCR Tesseract technology to extract relevant data. After extraction, the information is processed and displayed using the Pandas library.
+
+To use this script, it is necessary to install all dependencies and place the files to be processed in the folder named "Invoices." The program operates cumulatively, suggesting that, to build a more comprehensive history, consider inserting two or more invoices in different months for the same consumer unit. Finally, it is important to install Tesseract via https://sourceforge.net/projects/tesseract-ocr.mirror/ and declare its local path in the .py file.
