@@ -1,11 +1,52 @@
 # Leitura de Faturas de Energia
+Este projeto tem como objetivo compilar o histórico das unidades consumidoras, utilizando as informações contidas nas faturas de energia emitidas pela concessionária local, Energisa, na Paraíba, Brasil. Cada fatura contém uma tabela na segunda página, apresentando dados dos últimos 12 meses de consumo ativo, demanda ativa, consumo reativo e demanda reativa, tanto em períodos "ponta" quanto "fora de ponta". O script em Python foi desenvolvido para analisar arquivos no formato PDF, utilizando a tecnologia OCR Tesseract para extrair dados relevantes. Após a extração, as informações são processadas e exibidas por meio da biblioteca Pandas.
 
-Este projeto visa compilar o histórico das unidades consumidoras, utilizando as informações contidas nas faturas de energia emitidas pela concessionária local, Energisa, na Paraíba, Brasil. Cada fatura contém uma tabela na segunda página, apresentando dados dos últimos 12 meses de consumo ativo, demanda ativa, consumo reativo e demanda reativa, tanto em períodos "ponta" quanto "fora de ponta". O script em Python foi desenvolvido para analisar arquivos no formato PDF, utilizando a tecnologia OCR Tesseract para extrair dados relevantes. Após a extração, as informações são processadas e exibidas por meio da biblioteca Pandas.
+## Como Utilizar
 
-Para utilizar este script, é necessário instalar todas as dependências e inserir os arquivos a serem processados na pasta denominada "Faturas". O programa opera de maneira cumulativa, sugerindo que, para construir um histórico mais abrangente, considere inserir duas ou mais faturas em meses distintos da mesma unidade consumidora. Por fim, é importante instalar o Tesseract via https://sourceforge.net/projects/tesseract-ocr.mirror/ e declarar o seu path localmente no arquivo .py.
+Para utilizar este script, siga os passos abaixo:
 
-# Energy Invoice Reading
+1. **Instalação do Tesseract:**
+   - Instale o Tesseract via [https://sourceforge.net/projects/tesseract-ocr.mirror/](https://sourceforge.net/projects/tesseract-ocr.mirror/).
+   - Declare o caminho local do Tesseract no arquivo .py.
 
-This project aims to compile the history of consumer units using information found in energy invoices issued by the local utility company, Energisa, in Paraíba, Brazil. Each invoice contains a table on the second page, presenting data for the last 12 months of active consumption, active demand, reactive consumption, and reactive demand, both in "peak" and "off-peak" periods. The Python script was developed to analyze PDF files, utilizing OCR Tesseract technology to extract relevant data. After extraction, the information is processed and displayed using the Pandas library.
+2. **Inserir Arquivos na Pasta "Faturas":**
+   - Coloque os arquivos a serem processados na pasta denominada "Faturas". O programa opera de maneira cumulativa. Para construir um histórico mais abrangente, considere inserir duas ou mais faturas em meses distintos da mesma unidade consumidora.
 
-To use this script, it is necessary to install all dependencies and place the files to be processed in the folder named "Invoices." The program operates cumulatively, suggesting that, to build a more comprehensive history, consider inserting two or more invoices in different months for the same consumer unit. Finally, it is important to install Tesseract via https://sourceforge.net/projects/tesseract-ocr.mirror/ and declare its local path in the .py file.
+3. **Instalar Dependências:**
+   - Certifique-se de instalar todas as dependências necessárias.
+
+4. **Execução:**
+   - Execute o script para iniciar o processamento.
+
+Em caso de dúvidas ou sugestões, sinta-se à vontade para contatar: [lucasddoliveira1@gmail.com](mailto:lucasddoliveira1@gmail.com).
+
+## Resultados e Utilização
+
+O dataframe resultante pode ser aproveitado de diversas maneiras, dependendo do seu objetivo. Pode ser utilizado para análise de dados, criação de dashboards ou qualquer outra aplicação desejada. Personalize e explore os resultados conforme suas necessidades.
+
+# Energy Bill Reading
+This project aims to compile the history of consumer units using the information contained in the energy bills issued by the local utility company, Energisa, in Paraíba, Brazil. Each bill contains a table on the second page, presenting data for the last 12 months of active consumption, active demand, reactive consumption, and reactive demand, both in "peak" and "off-peak" periods. The Python script was developed to analyze PDF files, using OCR Tesseract technology to extract relevant data. After extraction, the information is processed and displayed using the Pandas library.
+
+## How to Use
+
+To use this script, follow the steps below:
+
+1. **Tesseract Installation:**
+   - Install Tesseract via https://sourceforge.net/projects/tesseract-ocr.mirror/.
+   - Declare the local path of Tesseract in the .py file.
+
+2. **Insert Files in the "Faturas" Folder:**
+   - Place the files to be processed in the folder named "Bills".
+   - The program operates cumulatively. To build a more comprehensive history, consider inserting two or more bills in different months for the same consumer unit.
+     
+3. **Install Dependencies:**
+   - Make sure to install all necessary dependencies.
+
+4. **Execution:**
+   - Run the script to initiate the processing.
+
+For questions or suggestions, feel free to contact: [lucasddoliveira1@gmail.com](mailto:lucasddoliveira1@gmail.com).
+
+## Results and Usage
+
+The resulting dataframe can be utilized in various ways, depending on your objective. It can be used for data analysis, dashboard creation, or any other desired application. Customize and explore the results according to your needs.
