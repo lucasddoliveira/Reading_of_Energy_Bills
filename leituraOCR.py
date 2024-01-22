@@ -99,7 +99,7 @@ def cleanDB(df):
 
 def process_second_page(path, uc, nome_arquivo):
     
-    pages = convert_from_path(os.path.join(path, nome_arquivo), 500, poppler_path=poppler)
+    pages = convert_from_path(os.path.join(path, nome_arquivo), 500, poppler_path='C:\\Users\\55839\\Desktop\\ESTÁGIO - CAGEPA\\PROJETO RUBYA - 2712\\poppler-23.11.0\\Library\\bin')
     
     if len(pages) >= 2:  # Ensure there are at least two pages in the PDF
         page = pages[1]  # Process the second page (index 1)
@@ -277,12 +277,7 @@ def process_second_page(path, uc, nome_arquivo):
                 # Add more cell coordinates as needed...
             ]
             
-            #draw = ImageDraw.Draw(result_image)
-            #for i in cell_coordinates:
-            #    draw.rectangle(i, outline='black', width=3)
-
-            # Saving the cropped image
-            #result_image.save("cropped_image1.png")
+            
             
             
             '''LINHAS E COLUNAS '''
@@ -339,224 +334,453 @@ def process_second_page(path, uc, nome_arquivo):
 
                 content.append(modified_text)
         except:
-            cropped = page_np[1430:2115, 1130:3350]
-            
-            # Convert the cropped array to a PIL image
-            result_image = PILImage.fromarray(cropped)
-
-            cell_coordinates = [
-
-                #SEGUNDA LINHA
-                [(5, 65), (177, 115)],
-                [(180, 65), (427, 115)],
-                [(434, 65), (635, 115)],
-                [(636, 65), (823, 115)],
-                [(831, 65), (1073, 115)],
-                [(1084, 65), (1303, 115)],
-                [(1308, 65), (1526, 115)],
-                [(1534, 65), (1752, 115)],
-                [(1769, 65), (1970, 115)],
-                [(1973, 65), (2205, 115)],
-
-                #TERCEIRA LINHA
-                [(5, 118), (177, 160)],
-                [(180, 115), (427, 160)],
-                [(434, 115), (635, 160)],
-                [(636, 115), (823, 160)],
-                [(831, 115), (1073, 160)],
-                [(1084, 115), (1303, 160)],
-                [(1308, 115), (1526, 160)],
-                [(1534, 115), (1752, 160)],
-                [(1769, 115), (1970, 160)],
-                [(1973, 115), (2205, 160)],
-
-                #QUARTA LINHA
-                [(5, 160), (177, 208)],
-                [(180, 160), (427, 208)],
-                [(434, 160), (635, 208)],
-                [(636, 160), (823, 208)],
-                [(831, 160), (1073, 208)],
-                [(1084, 160), (1303, 208)],
-                [(1308, 160), (1526, 208)],
-                [(1534, 160), (1752, 208)],
-                [(1769, 160), (1970, 208)],
-                [(1973, 160), (2205, 208)],
-
-                #QUINTA LINHA
-                [(5, 208), (177, 256)],
-                [(180, 208), (427, 256)],
-                [(434, 208), (635, 256)],
-                [(636, 208), (823, 256)],
-                [(831, 208), (1073, 256)],
-                [(1084, 208), (1303, 256)],
-                [(1308, 208), (1526, 256)],
-                [(1534, 208), (1752, 256)],
-                [(1769, 208), (1970, 256)],
-                [(1973, 208), (2205, 256)],
-
-                #SEXTA LINHA
-                [(5, 256), (177, 300)],
-                [(180, 256), (427, 300)],
-                [(434, 256), (635, 300)],
-                [(636, 256), (823, 300)],
-                [(831, 256), (1073, 300)],
-                [(1084, 256), (1303, 300)],
-                [(1308, 256), (1526, 300)],
-                [(1534, 256), (1752, 300)],
-                [(1769, 256), (1970, 300)],
-                [(1973, 256), (2205, 300)],
-
-                #SETIMA LINHA
-                [(5, 300), (177, 347)],
-                [(180, 300), (427, 347)],
-                [(434, 300), (635, 347)],
-                [(636, 300), (823, 347)],
-                [(831, 300), (1073, 347)],
-                [(1084, 300), (1303, 347)],
-                [(1308, 300), (1526, 347)],
-                [(1534, 300), (1752, 347)],
-                [(1769, 300), (1970, 347)],
-                [(1973, 300), (2205, 347)],
-
-                #OITAVA LINHA
-                [(5, 347), (177, 394)],
-                [(180, 347), (427, 394)],
-                [(434, 347), (635, 394)],
-                [(636, 347), (823, 394)],
-                [(831, 347), (1073, 394)],
-                [(1084, 347), (1303, 394)],
-                [(1308, 347), (1526, 394)],
-                [(1534, 347), (1752, 394)],
-                [(1769, 347), (1970, 394)],
-                [(1973, 347), (2205, 394)],
-
-                #NONA LINHA
-                [(5, 394), (177, 442)],
-                [(180, 394), (427, 442)],
-                [(434, 394), (635, 442)],
-                [(636, 394), (823, 442)],
-                [(831, 394), (1073, 442)],
-                [(1084, 394), (1303, 442)],
-                [(1308, 394), (1526, 442)],
-                [(1534, 394), (1752, 442)],
-                [(1769, 394), (1970, 442)],
-                [(1973, 394), (2205, 442)],
-
-                #DECIMA LINHA
-                [(5, 442), (177, 492)],
-                [(180, 442), (427, 492)],
-                [(434, 442), (635, 492)],
-                [(636, 442), (823, 492)],
-                [(831, 442), (1073, 492)],
-                [(1084, 442), (1303, 492)],
-                [(1308, 442), (1526, 492)],
-                [(1534, 442), (1752, 492)],
-                [(1769, 442), (1970, 492)],
-                [(1973, 442), (2205, 492)],
-
-                #DECIMA PRIMEIRA LINHA
-                [(5, 492), (177, 538)],
-                [(180, 492), (427, 538)],
-                [(434, 492), (635, 538)],
-                [(636, 492), (823, 538)],
-                [(831, 492), (1073, 538)],
-                [(1084, 492), (1303, 538)],
-                [(1308, 492), (1526, 538)],
-                [(1534, 492), (1752, 538)],
-                [(1769, 492), (1970, 538)],
-                [(1973, 492), (2205, 538)],
-
-                #DECIMA SEGUNDA LINHA
-                [(5, 538), (177, 587)],
-                [(180, 538), (427, 587)],
-                [(434, 538), (635, 587)],
-                [(636, 538), (823, 587)],
-                [(831, 538), (1073, 587)],
-                [(1084, 538), (1303, 587)],
-                [(1308, 538), (1526, 587)],
-                [(1534, 538), (1752, 587)],
-                [(1769, 538), (1970, 587)],
-                [(1973, 538), (2205, 587)],
-
-                #DECIMA SEGUNDA LINHA
-                [(5, 587), (177, 631)],
-                [(180, 587), (427, 631)],
-                [(434, 587), (635, 631)],
-                [(636, 587), (823, 631)],
-                [(831, 587), (1073, 631)],
-                [(1084, 587), (1303, 631)],
-                [(1308, 587), (1526, 631)],
-                [(1534, 587), (1752, 631)],
-                [(1769, 587), (1970, 631)],
-                [(1973, 587), (2205, 631)],
-
-                #DECIMA TERCEIRA LINHA
-                [(5, 631), (177, 676)],
-                [(180, 631), (427, 676)],
-                [(434, 631), (635, 676)],
-                [(636, 631), (823, 676)],
-                [(831, 631), (1073, 676)],
-                [(1084, 631), (1303, 676)],
-                [(1308, 631), (1526, 676)],
-                [(1534, 631), (1752, 676)],
-                [(1769, 631), (1970, 676)],
-                [(1973, 631), (2205, 676)],
-                # Add more cell coordinates as needed...
-            ]
-            
-            '''LINHAS E COLUNAS '''
-            '''
-            draw = ImageDraw.Draw(result_image)
-            line_thickness = 3  # Thickness5 of the black lines
-            line_positions = [111,152, 197, 240, 286, 332, 376, 425, 470, 520, 565, 610, 655]  # Positions for the black lines
-            column_positions = [150, 400,605, 800, 1050, 1275, 1500, 1725, 1930]
-
-            for y in line_positions:
-                y = y - 35
-                draw.line((19, y, 2150, y), fill='black', width=line_thickness)
-            for x in column_positions:
-                x = x + 30
-                draw.line((x, 30, x, 670), fill='black', width=line_thickness)
-            '''      
-            ''''
-            draw.text((70, 38), text[0], fill=text_color, font=font)
-            draw.text((290, 38), text[1], fill=text_color, font=font)
-            draw.text((530, 38), text[2], fill=text_color, font=font)
-            draw.text((750, 38), text[3], fill=text_color, font=font)
-            draw.text((960, 38), text[4], fill=text_color, font=font)
-            draw.text((1170, 38), text[5], fill=text_color, font=font)
-            draw.text((1400, 38), text[6], fill=text_color, font=font)
-            draw.text((1610, 38), text[7], fill=text_color, font=font)
-            draw.text((1830, 38), text[8], fill=text_color, font=font)
-            draw.text((2050, 38), text[9], fill=text_color, font=font)
-            '''
-            
-            result_image = result_image.convert('L') 
-            #result_image.save(os.path.join(path, f"{nome_arquivo.lower().replace('.pdf', '.jpg')}"), 'JPEG')
-
-            cell_coordinates_to_crop = transform_coordinates(cell_coordinates)
-            
-            content = []
-
-            for i in cell_coordinates_to_crop:
-                cropped_region = result_image.crop(i)  
+            try:
+                cropped = page_np[1430:2115, 1130:3350]
                 
-                text = pytesseract.image_to_string(cropped_region)
+                # Convert the cropped array to a PIL image
+                result_image = PILImage.fromarray(cropped)
+
+                cell_coordinates = [
+
+                    #SEGUNDA LINHA
+                    [(5, 65), (177, 115)],
+                    [(180, 65), (427, 115)],
+                    [(434, 65), (635, 115)],
+                    [(636, 65), (823, 115)],
+                    [(831, 65), (1073, 115)],
+                    [(1084, 65), (1303, 115)],
+                    [(1308, 65), (1526, 115)],
+                    [(1534, 65), (1752, 115)],
+                    [(1769, 65), (1970, 115)],
+                    [(1973, 65), (2205, 115)],
+
+                    #TERCEIRA LINHA
+                    [(5, 118), (177, 160)],
+                    [(180, 115), (427, 160)],
+                    [(434, 115), (635, 160)],
+                    [(636, 115), (823, 160)],
+                    [(831, 115), (1073, 160)],
+                    [(1084, 115), (1303, 160)],
+                    [(1308, 115), (1526, 160)],
+                    [(1534, 115), (1752, 160)],
+                    [(1769, 115), (1970, 160)],
+                    [(1973, 115), (2205, 160)],
+
+                    #QUARTA LINHA
+                    [(5, 160), (177, 208)],
+                    [(180, 160), (427, 208)],
+                    [(434, 160), (635, 208)],
+                    [(636, 160), (823, 208)],
+                    [(831, 160), (1073, 208)],
+                    [(1084, 160), (1303, 208)],
+                    [(1308, 160), (1526, 208)],
+                    [(1534, 160), (1752, 208)],
+                    [(1769, 160), (1970, 208)],
+                    [(1973, 160), (2205, 208)],
+
+                    #QUINTA LINHA
+                    [(5, 208), (177, 256)],
+                    [(180, 208), (427, 256)],
+                    [(434, 208), (635, 256)],
+                    [(636, 208), (823, 256)],
+                    [(831, 208), (1073, 256)],
+                    [(1084, 208), (1303, 256)],
+                    [(1308, 208), (1526, 256)],
+                    [(1534, 208), (1752, 256)],
+                    [(1769, 208), (1970, 256)],
+                    [(1973, 208), (2205, 256)],
+
+                    #SEXTA LINHA
+                    [(5, 256), (177, 300)],
+                    [(180, 256), (427, 300)],
+                    [(434, 256), (635, 300)],
+                    [(636, 256), (823, 300)],
+                    [(831, 256), (1073, 300)],
+                    [(1084, 256), (1303, 300)],
+                    [(1308, 256), (1526, 300)],
+                    [(1534, 256), (1752, 300)],
+                    [(1769, 256), (1970, 300)],
+                    [(1973, 256), (2205, 300)],
+
+                    #SETIMA LINHA
+                    [(5, 300), (177, 347)],
+                    [(180, 300), (427, 347)],
+                    [(434, 300), (635, 347)],
+                    [(636, 300), (823, 347)],
+                    [(831, 300), (1073, 347)],
+                    [(1084, 300), (1303, 347)],
+                    [(1308, 300), (1526, 347)],
+                    [(1534, 300), (1752, 347)],
+                    [(1769, 300), (1970, 347)],
+                    [(1973, 300), (2205, 347)],
+
+                    #OITAVA LINHA
+                    [(5, 347), (177, 394)],
+                    [(180, 347), (427, 394)],
+                    [(434, 347), (635, 394)],
+                    [(636, 347), (823, 394)],
+                    [(831, 347), (1073, 394)],
+                    [(1084, 347), (1303, 394)],
+                    [(1308, 347), (1526, 394)],
+                    [(1534, 347), (1752, 394)],
+                    [(1769, 347), (1970, 394)],
+                    [(1973, 347), (2205, 394)],
+
+                    #NONA LINHA
+                    [(5, 394), (177, 442)],
+                    [(180, 394), (427, 442)],
+                    [(434, 394), (635, 442)],
+                    [(636, 394), (823, 442)],
+                    [(831, 394), (1073, 442)],
+                    [(1084, 394), (1303, 442)],
+                    [(1308, 394), (1526, 442)],
+                    [(1534, 394), (1752, 442)],
+                    [(1769, 394), (1970, 442)],
+                    [(1973, 394), (2205, 442)],
+
+                    #DECIMA LINHA
+                    [(5, 442), (177, 492)],
+                    [(180, 442), (427, 492)],
+                    [(434, 442), (635, 492)],
+                    [(636, 442), (823, 492)],
+                    [(831, 442), (1073, 492)],
+                    [(1084, 442), (1303, 492)],
+                    [(1308, 442), (1526, 492)],
+                    [(1534, 442), (1752, 492)],
+                    [(1769, 442), (1970, 492)],
+                    [(1973, 442), (2205, 492)],
+
+                    #DECIMA PRIMEIRA LINHA
+                    [(5, 492), (177, 538)],
+                    [(180, 492), (427, 538)],
+                    [(434, 492), (635, 538)],
+                    [(636, 492), (823, 538)],
+                    [(831, 492), (1073, 538)],
+                    [(1084, 492), (1303, 538)],
+                    [(1308, 492), (1526, 538)],
+                    [(1534, 492), (1752, 538)],
+                    [(1769, 492), (1970, 538)],
+                    [(1973, 492), (2205, 538)],
+
+                    #DECIMA SEGUNDA LINHA
+                    [(5, 538), (177, 587)],
+                    [(180, 538), (427, 587)],
+                    [(434, 538), (635, 587)],
+                    [(636, 538), (823, 587)],
+                    [(831, 538), (1073, 587)],
+                    [(1084, 538), (1303, 587)],
+                    [(1308, 538), (1526, 587)],
+                    [(1534, 538), (1752, 587)],
+                    [(1769, 538), (1970, 587)],
+                    [(1973, 538), (2205, 587)],
+
+                    #DECIMA SEGUNDA LINHA
+                    [(5, 587), (177, 631)],
+                    [(180, 587), (427, 631)],
+                    [(434, 587), (635, 631)],
+                    [(636, 587), (823, 631)],
+                    [(831, 587), (1073, 631)],
+                    [(1084, 587), (1303, 631)],
+                    [(1308, 587), (1526, 631)],
+                    [(1534, 587), (1752, 631)],
+                    [(1769, 587), (1970, 631)],
+                    [(1973, 587), (2205, 631)],
+
+                    #DECIMA TERCEIRA LINHA
+                    [(5, 631), (177, 676)],
+                    [(180, 631), (427, 676)],
+                    [(434, 631), (635, 676)],
+                    [(636, 631), (823, 676)],
+                    [(831, 631), (1073, 676)],
+                    [(1084, 631), (1303, 676)],
+                    [(1308, 631), (1526, 676)],
+                    [(1534, 631), (1752, 676)],
+                    [(1769, 631), (1970, 676)],
+                    [(1973, 631), (2205, 676)],
+                    # Add more cell coordinates as needed...
+                ]
                 
-                modified_text = text.replace('\n', '')
-                modified_text = modified_text.replace(' ', '')
-                modified_text = modified_text.replace('.', '')
-                modified_text = modified_text.replace('*', '')
+                '''LINHAS E COLUNAS '''
+                '''
+                draw = ImageDraw.Draw(result_image)
+                line_thickness = 3  # Thickness5 of the black lines
+                line_positions = [111,152, 197, 240, 286, 332, 376, 425, 470, 520, 565, 610, 655]  # Positions for the black lines
+                column_positions = [150, 400,605, 800, 1050, 1275, 1500, 1725, 1930]
 
-                has_numeric = lambda string: any(char.isdigit() for char in string)
+                for y in line_positions:
+                    y = y - 35
+                    draw.line((19, y, 2150, y), fill='black', width=line_thickness)
+                for x in column_positions:
+                    x = x + 30
+                    draw.line((x, 30, x, 670), fill='black', width=line_thickness)
+                '''      
+                ''''
+                draw.text((70, 38), text[0], fill=text_color, font=font)
+                draw.text((290, 38), text[1], fill=text_color, font=font)
+                draw.text((530, 38), text[2], fill=text_color, font=font)
+                draw.text((750, 38), text[3], fill=text_color, font=font)
+                draw.text((960, 38), text[4], fill=text_color, font=font)
+                draw.text((1170, 38), text[5], fill=text_color, font=font)
+                draw.text((1400, 38), text[6], fill=text_color, font=font)
+                draw.text((1610, 38), text[7], fill=text_color, font=font)
+                draw.text((1830, 38), text[8], fill=text_color, font=font)
+                draw.text((2050, 38), text[9], fill=text_color, font=font)
+                '''
+                
+                result_image = result_image.convert('L') 
+                #result_image.save(os.path.join(path, f"{nome_arquivo.lower().replace('.pdf', '.jpg')}"), 'JPEG')
 
-                if(modified_text==''):
-                    modified_text='0,00'
+                cell_coordinates_to_crop = transform_coordinates(cell_coordinates)
+                
+                content = []
 
-                if (modified_text[-3] != ',' and '/' not in modified_text):
-                    modified_text =  modified_text[:-2] + ',' + modified_text[-2:]
+                for i in cell_coordinates_to_crop:
+                    cropped_region = result_image.crop(i)  
+                    
+                    text = pytesseract.image_to_string(cropped_region)
+                    
+                    modified_text = text.replace('\n', '')
+                    modified_text = modified_text.replace(' ', '')
+                    modified_text = modified_text.replace('.', '')
+                    modified_text = modified_text.replace('*', '')
 
-                content.append(modified_text)
+                    has_numeric = lambda string: any(char.isdigit() for char in string)
+
+                    if(modified_text==''):
+                        modified_text='0,00'
+
+                    if (modified_text[-3] != ',' and '/' not in modified_text):
+                        modified_text =  modified_text[:-2] + ',' + modified_text[-2:]
+
+                    content.append(modified_text)
+            except:
+                cropped = page_np[1200:1885, 1080:3300]
+                # CASO 3
+                # Convert the cropped array to a PIL image
+                result_image = PILImage.fromarray(cropped)
+
+                cell_coordinates = [
+
+                    #SEGUNDA LINHA
+                    [(5, 65), (182, 118)],
+                    [(180, 65), (405, 118)],
+                    [(405, 65), (625, 118)],
+                    [(625, 65), (823, 118)],
+                    [(823, 65), (1035, 118)],
+                    [(1035, 65), (1266, 118)],
+                    [(1266, 65), (1440, 118)],
+                    [(1440, 65), (1615, 118)],
+                    [(1615, 65), (1810, 118)],
+                    [(1810, 65), (2060, 118)],
+
+                    #TERCEIRA LINHA
+                    [(5, 115), (182, 160)],
+                    [(180, 115), (405, 160)],
+                    [(405, 115), (625, 160)],
+                    [(625, 115), (823, 160)],
+                    [(823, 115), (1035, 160)],
+                    [(1035, 115), (1266, 160)],
+                    [(1266, 115), (1440, 160)],
+                    [(1440, 115), (1615, 160)],
+                    [(1615, 115), (1810, 160)],
+                    [(1810, 115), (2060, 160)],
+
+                    #QUARTA LINHA
+                    [(5, 160), (182, 208)],
+                    [(180, 160), (405, 208)],
+                    [(405, 160), (625, 208)],
+                    [(625, 160), (823, 208)],
+                    [(823, 160), (1035, 208)],
+                    [(1035, 160), (1266, 208)],
+                    [(1266, 160), (1440, 208)],
+                    [(1440, 160), (1615, 208)],
+                    [(1615, 160), (1810, 208)],
+                    [(1810, 160), (2060, 208)],
+
+                    #QUINTA LINHA
+                    [(5, 208), (182, 253)],
+                    [(180, 208), (405, 253)],
+                    [(405, 208), (625, 253)],
+                    [(625, 208), (823, 253)],
+                    [(823, 208), (1035, 253)],
+                    [(1035, 208), (1266, 253)],
+                    [(1266, 208), (1440, 253)],
+                    [(1440, 208), (1615, 253)],
+                    [(1615, 208), (1810, 253)],
+                    [(1810, 208), (2060, 253)],
+
+                    #SEXTA LINHA
+                    [(5, 253), (182, 297)],
+                    [(180, 253), (405, 297)],
+                    [(405, 253), (625, 297)],
+                    [(625, 253), (823, 297)],
+                    [(823, 253), (1035, 297)],
+                    [(1035, 253), (1266, 297)],
+                    [(1266, 253), (1440, 297)],
+                    [(1440, 253), (1615, 297)],
+                    [(1615, 253), (1810, 297)],
+                    [(1810, 253), (2060, 297)],
+
+                    #SETIMA LINHA
+                    [(5, 297), (182, 343)],
+                    [(180, 297), (405, 343)],
+                    [(405, 297), (625, 343)],
+                    [(625, 297), (823, 343)],
+                    [(823, 297), (1035, 343)],
+                    [(1035, 297), (1266, 343)],
+                    [(1266, 297), (1440, 343)],
+                    [(1440, 297), (1615, 343)],
+                    [(1615, 297), (1810, 343)],
+                    [(1810, 297), (2060, 343)],
+
+                    #OITAVA LINHA
+                    [(5, 343), (182, 391)],
+                    [(180, 343), (405, 391)],
+                    [(405, 343), (625, 391)],
+                    [(625, 343), (823, 391)],
+                    [(823, 343), (1035, 391)],
+                    [(1035, 343), (1266, 391)],
+                    [(1266, 343), (1440, 391)],
+                    [(1440, 343), (1615, 391)],
+                    [(1615, 343), (1810, 391)],
+                    [(1810, 343), (2060, 391)],
+
+                    #NONA LINHA
+                    [(5, 391), (182, 438)],
+                    [(180, 391), (405, 438)],
+                    [(405, 391), (625, 438)],
+                    [(625, 391), (823, 438)],
+                    [(823, 391), (1035, 438)],
+                    [(1035, 391), (1266, 438)],
+                    [(1266, 391), (1440, 438)],
+                    [(1440, 391), (1615, 438)],
+                    [(1615, 391), (1810, 438)],
+                    [(1810, 391), (2060, 438)],
+
+                    #DECIMA LINHA
+                    [(5, 438), (182, 488)],
+                    [(180, 438), (405, 488)],
+                    [(405, 438), (625, 488)],
+                    [(625, 438), (823, 488)],
+                    [(823, 438), (1035, 488)],
+                    [(1035, 438), (1266, 488)],
+                    [(1266, 438), (1440, 488)],
+                    [(1440, 438), (1615, 488)],
+                    [(1615, 438), (1810, 488)],
+                    [(1810, 438), (2060, 488)],
+
+                    #DECIMA PRIMEIRA LINHA
+                    [(5, 488), (182, 534)],
+                    [(180, 488), (405, 534)],
+                    [(405, 488), (625, 534)],
+                    [(625, 488), (823, 534)],
+                    [(823, 488), (1035, 534)],
+                    [(1035, 488), (1266, 534)],
+                    [(1266, 488), (1440, 534)],
+                    [(1440, 488), (1615, 534)],
+                    [(1615, 488), (1810, 534)],
+                    [(1810, 488), (2060, 534)],
+
+                    #DECIMA SEGUNDA LINHA
+                    [(5, 534), (182, 580)],
+                    [(180, 534), (405, 580)],
+                    [(405, 534), (625, 580)],
+                    [(625, 534), (823, 580)],
+                    [(823, 534), (1035, 580)],
+                    [(1035, 534), (1266, 580)],
+                    [(1266, 534), (1440, 580)],
+                    [(1440, 534), (1615, 580)],
+                    [(1615, 534), (1810, 580)],
+                    [(1810, 534), (2060, 580)],
+
+                    #DECIMA SEGUNDA LINHA
+                    [(5, 580), (182, 621)],
+                    [(180, 580), (405, 621)],
+                    [(405, 580), (625, 621)],
+                    [(625, 580), (823, 621)],
+                    [(823, 580), (1035, 621)],
+                    [(1035, 580), (1266, 621)],
+                    [(1266, 580), (1440, 621)],
+                    [(1440, 580), (1615, 621)],
+                    [(1615, 580), (1810, 621)],
+                    [(1810, 580), (2060, 621)],
+
+                    #DECIMA TERCEIRA LINHA
+                    [(5, 621), (182, 676)],
+                    [(180, 621), (405, 676)],
+                    [(405, 621), (625, 676)],
+                    [(625, 621), (823, 676)],
+                    [(823, 621), (1035, 676)],
+                    [(1035, 621), (1266, 676)],
+                    [(1266, 621), (1440, 676)],
+                    [(1440, 621), (1615, 676)],
+                    [(1615, 621), (1810, 676)],
+                    [(1810, 621), (2060, 676)],
+                    # Add more cell coordinates as needed...
+                ]
+                
+                '''
+                draw = ImageDraw.Draw(result_image)
+                for i in cell_coordinates:
+                    draw.rectangle(i, outline='black', width=3)
+
+                #Saving the cropped image
+                result_image.save("cropped_image1.png")
+                '''
+                '''LINHAS E COLUNAS '''
+                '''
+                draw = ImageDraw.Draw(result_image)
+                line_thickness = 3  # Thickness5 of the black lines
+                line_positions = [111,152, 197, 240, 286, 332, 376, 425, 470, 520, 565, 610, 655]  # Positions for the black lines
+                column_positions = [150, 400,605, 800, 1050, 1275, 1500, 1725, 1930]
+
+                for y in line_positions:
+                    y = y - 35
+                    draw.line((19, y, 2150, y), fill='black', width=line_thickness)
+                for x in column_positions:
+                    x = x + 30
+                    draw.line((x, 30, x, 670), fill='black', width=line_thickness)
+                '''      
+                ''''
+                draw.text((70, 38), text[0], fill=text_color, font=font)
+                draw.text((290, 38), text[1], fill=text_color, font=font)
+                draw.text((530, 38), text[2], fill=text_color, font=font)
+                draw.text((750, 38), text[3], fill=text_color, font=font)
+                draw.text((960, 38), text[4], fill=text_color, font=font)
+                draw.text((1170, 38), text[5], fill=text_color, font=font)
+                draw.text((1400, 38), text[6], fill=text_color, font=font)
+                draw.text((1610, 38), text[7], fill=text_color, font=font)
+                draw.text((1830, 38), text[8], fill=text_color, font=font)
+                draw.text((2050, 38), text[9], fill=text_color, font=font)
+                '''
+                
+                result_image = result_image.convert('L') 
+                #result_image.save(os.path.join(path, f"{nome_arquivo.lower().replace('.pdf', '.jpg')}"), 'JPEG')
+
+                cell_coordinates_to_crop = transform_coordinates(cell_coordinates)
+                
+                content = []
+
+                for i in cell_coordinates_to_crop:
+                    cropped_region = result_image.crop(i)  
+                    
+                    text = pytesseract.image_to_string(cropped_region)
+                    
+                    modified_text = text.replace('\n', '')
+                    modified_text = modified_text.replace(' ', '')
+                    modified_text = modified_text.replace('.', '')
+                    modified_text = modified_text.replace('*', '')
+
+                    has_numeric = lambda string: any(char.isdigit() for char in string)
+
+                    if(modified_text==''):
+                        modified_text='0,00'
+
+                    if (modified_text[-3] != ',' and '/' not in modified_text):
+                        modified_text =  modified_text[:-2] + ',' + modified_text[-2:]
+
+                    content.append(modified_text)
+
         
         content_reshaped = np.reshape(content, (13, 10))
 
