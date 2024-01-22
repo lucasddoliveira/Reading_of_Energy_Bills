@@ -6,7 +6,6 @@ import pytesseract
 import pandas as pd
 import pygsheets
 import datetime
-import matplotlib.pyplot as plt
 
 st = datetime.datetime.now()
 pytesseract.pytesseract.tesseract_cmd = 'C:\\Program Files (x86)\\Tesseract-OCR\\tesseract.exe'
@@ -863,24 +862,8 @@ def iterateOnBills(diretorio):
                         
     
     processed_df = cleanDB(df)
-    
     print(processed_df)
-    plt.figure(figsize=(12, 8))
 
-    plt.plot(processed_df['MES'], processed_df['DEMANDA REATIVO PONTA'], label='DEMANDA REATIVA - PONTA', marker='o')
-    plt.plot(processed_df['MES'], processed_df['DEMANDA REATIVO FORA PONTA'], label='DEMANDA REATIVA - FORA PONTA', marker='o')
-    plt.plot(processed_df['MES'], processed_df['DEMANDA MEDIDA PONTA'], label='DEMANDA MEDIDA - PONTA', marker='o')
-    plt.plot(processed_df['MES'], processed_df['DEMANDA MEDIDA FORA PONTA'], label='DEMANDA MEDIDA - FORA PONTA', marker='o')
-
-    plt.xlabel('Meses')
-    plt.ylabel('KW')  # You can adjust the ylabel as needed
-    plt.title('Histórico de Demanda Elétrica')
-    plt.legend()
-    plt.grid(True)
-
-    plt.gca().invert_xaxis()
-    
-    plt.show()
         
     et = datetime.datetime.now()
     elapsed_time = et - st
