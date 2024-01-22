@@ -27,6 +27,7 @@ O dataframe resultante pode ser aproveitado de diversas maneiras, dependendo do 
 ![image](https://github.com/lucasddoliveira/Reading_of_Energy_Bills/assets/85253035/2c161857-1764-4846-a72a-1c61561211f9)
 ![image](https://github.com/lucasddoliveira/Reading_of_Energy_Bills/assets/85253035/65ef15ba-c873-4f15-b72c-ec4d96cea08b)
 ![image](https://github.com/lucasddoliveira/Reading_of_Energy_Bills/assets/85253035/258a3c49-759d-4ab4-85d4-7098367485ec)
+![image](https://github.com/lucasddoliveira/Reading_of_Energy_Bills/assets/85253035/fff16d81-8e89-4a86-9497-1179652cced3)
 
 # Energy Bill Reading (EN)
 This project aims to compile the history of consumer units using the information contained in the energy bills issued by the local utility company, Energisa, in Paraíba, Brazil. Each bill contains a table on the second page, presenting data for the last 12 months of active consumption, active demand, reactive consumption, and reactive demand, both in "peak" and "off-peak" periods. The Python script was developed to analyze PDF files, using OCR Tesseract technology to extract relevant data. After extraction, the information is processed and displayed using the Pandas library.
@@ -58,3 +59,5 @@ The resulting dataframe can be utilized in various ways, depending on your objec
 ![image](https://github.com/lucasddoliveira/Reading_of_Energy_Bills/assets/85253035/2c161857-1764-4846-a72a-1c61561211f9)
 ![image](https://github.com/lucasddoliveira/Reading_of_Energy_Bills/assets/85253035/65ef15ba-c873-4f15-b72c-ec4d96cea08b)
 ![image](https://github.com/lucasddoliveira/Reading_of_Energy_Bills/assets/85253035/258a3c49-759d-4ab4-85d4-7098367485ec)
+![image](https://github.com/lucasddoliveira/Reading_of_Energy_Bills/assets/85253035/77026095-7c85-448b-9c32-be776e34619f)
+
