@@ -26,7 +26,6 @@ O dataframe resultante pode ser aproveitado de diversas maneiras, dependendo do 
 
 ![image](https://github.com/lucasddoliveira/Reading_of_Energy_Bills/assets/85253035/2c161857-1764-4846-a72a-1c61561211f9)
 ![image](https://github.com/lucasddoliveira/Reading_of_Energy_Bills/assets/85253035/65ef15ba-c873-4f15-b72c-ec4d96cea08b)
-![image](https://github.com/lucasddoliveira/Reading_of_Energy_Bills/assets/85253035/258a3c49-759d-4ab4-85d4-7098367485ec)
 ![image](https://github.com/lucasddoliveira/Reading_of_Energy_Bills/assets/85253035/fff16d81-8e89-4a86-9497-1179652cced3)
 
 # Energy Bill Reading (EN)
@@ -58,6 +57,5 @@ The resulting dataframe can be utilized in various ways, depending on your objec
 
 ![image](https://github.com/lucasddoliveira/Reading_of_Energy_Bills/assets/85253035/2c161857-1764-4846-a72a-1c61561211f9)
 ![image](https://github.com/lucasddoliveira/Reading_of_Energy_Bills/assets/85253035/65ef15ba-c873-4f15-b72c-ec4d96cea08b)
-![image](https://github.com/lucasddoliveira/Reading_of_Energy_Bills/assets/85253035/258a3c49-759d-4ab4-85d4-7098367485ec)
 ![image](https://github.com/lucasddoliveira/Reading_of_Energy_Bills/assets/85253035/77026095-7c85-448b-9c32-be776e34619f)
 
