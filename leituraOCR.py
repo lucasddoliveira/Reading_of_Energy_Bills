@@ -6,6 +6,7 @@ import pytesseract
 import pandas as pd
 import pygsheets
 import datetime
+import matplotlib.pyplot as plt
 
 st = datetime.datetime.now()
 pytesseract.pytesseract.tesseract_cmd = 'C:\\Program Files (x86)\\Tesseract-OCR\\tesseract.exe'
@@ -93,6 +94,15 @@ def cleanDB(df):
         'DEMANDA REATIVO FORA PONTA',
         'DEMANDA MEDIDA PONTA',
         'DEMANDA MEDIDA FORA PONTA'])
+    
+    df['CONSUMO KWH PONTA']= df['CONSUMO KWH PONTA'].replace(',', '.', regex=True).astype(float)
+    df['CONSUMO KWH FORA PONTA']= df['CONSUMO KWH FORA PONTA'].replace(',', '.', regex=True).astype(float)
+    df['CONSUMO REATIVO PONTA']= df['CONSUMO REATIVO PONTA'].replace(',', '.', regex=True).astype(float)
+    df['CONSUMO REATIVO FORA PONTA']= df['CONSUMO REATIVO FORA PONTA'].replace(',', '.', regex=True).astype(float)
+    df['DEMANDA REATIVO PONTA']= df['DEMANDA REATIVO PONTA'].replace(',', '.', regex=True).astype(float)
+    df['DEMANDA REATIVO FORA PONTA']= df['DEMANDA REATIVO FORA PONTA'].replace(',', '.', regex=True).astype(float)
+    df['DEMANDA MEDIDA PONTA']= df['DEMANDA MEDIDA PONTA'].replace(',', '.', regex=True).astype(float)
+    df['DEMANDA MEDIDA FORA PONTA']= df['DEMANDA MEDIDA FORA PONTA'].replace(',', '.', regex=True).astype(float)
 
     return df
 
@@ -864,6 +874,22 @@ def iterateOnBills(diretorio):
     processed_df = cleanDB(df)
     print(processed_df)
 
+    plt.figure(figsize=(12, 8))
+
+    plt.plot(processed_df['MES'], processed_df['DEMANDA REATIVO PONTA'], label='DEMANDA REATIVA - PONTA', marker='o')
+    plt.plot(processed_df['MES'], processed_df['DEMANDA REATIVO FORA PONTA'], label='DEMANDA REATIVA - FORA PONTA', marker='o')
+    plt.plot(processed_df['MES'], processed_df['DEMANDA MEDIDA PONTA'], label='DEMANDA MEDIDA - PONTA', marker='o')
+    plt.plot(processed_df['MES'], processed_df['DEMANDA MEDIDA FORA PONTA'], label='DEMANDA MEDIDA - FORA PONTA', marker='o')
+
+    plt.xlabel('Meses')
+    plt.ylabel('KW')  # You can adjust the ylabel as needed
+    plt.title('Histórico de Demanda Elétrica')
+    plt.legend()
+    plt.grid(True)
+
+    plt.gca().invert_xaxis()  
+    
+    plt.show()
         
     et = datetime.datetime.now()
     elapsed_time = et - st
