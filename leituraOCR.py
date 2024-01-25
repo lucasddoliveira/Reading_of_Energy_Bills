@@ -108,7 +108,7 @@ def cleanDB(df):
 
 def process_second_page(path, uc, nome_arquivo):
     
-    pages = convert_from_path(os.path.join(path, nome_arquivo), 500, poppler_path='C:\\Users\\55839\\Desktop\\ESTÁGIO - CAGEPA\\PROJETO RUBYA - 2712\\poppler-23.11.0\\Library\\bin')
+    pages = convert_from_path(os.path.join(path, nome_arquivo), 500, poppler_path=poppler)
     
     if len(pages) >= 2:  # Ensure there are at least two pages in the PDF
         page = pages[1]  # Process the second page (index 1)
